@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 require("./app/routes/turorial.routes")(app);
 
 // set port, listen for requests
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+const PORT = 8080;
+app.listen(8080, () => {
+  console.log(`Server is running on port 8080.`);
 });
