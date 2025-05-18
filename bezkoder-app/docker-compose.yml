@@ -4,7 +4,7 @@ services:
   web:
     build: .
     ports:
-      - "3000:5000"        # Expose port 5000 of the container to port 5000 on the host
+      - "8080:8080"        # Expose port 5000 of the container to port 5000 on the host
     volumes:
       - ./src:/app         # Mount the source code directory for live reloading
 
