@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"        # Expose port 5000 of the container to port 5000 on the host
+    volumes:
+      - ./src:/app         # Mount the source code directory for live reloading
+
+  db:
+    image: postgres:latest  # Use the latest Postgres image from Docker Hub
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: appdb
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Attach a volume to persist data
+
+volumes:
+  db_data:
